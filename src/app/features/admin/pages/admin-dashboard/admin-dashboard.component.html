@@ -1,0 +1,19 @@
+<div class="transition-all min-h-screen bg-gray-50">
+  <app-header></app-header>
+
+  <main class="p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <app-stat-card
+        *ngFor="let stat of statsCards"
+        [title]="stat.title"
+        [value]="stat.value"
+        [icon]="stat.icon"
+        [iconBgClass]="stat.iconBgClass"
+        [iconColorClass]="stat.iconColorClass"
+      >
+      </app-stat-card>
+    </div>
+
+    <app-teacher-table></app-teacher-table>
+  </main>
+</div>
