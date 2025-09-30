@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { SystemSettingsComponent } from '../../components/system-settings/system-settings.component';
+import { ProfileFormComponent } from '../../components/profile-form/profile-form.component';
+import { ChangePasswordComponent } from "../../components/change-password/change-password.component";
 @Component({
   selector: 'app-settings',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, SystemSettingsComponent, ProfileFormComponent, ChangePasswordComponent],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css',
 })

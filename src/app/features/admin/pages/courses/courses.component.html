@@ -1,3 +1,70 @@
 <div class="transition-all min-h-screen bg-gray-50">
-  <app-header pageTitle="Courses"></app-header>
+  <app-header pageTitle="Users"></app-header>
+
+  <main class="p-6">
+    <!-- Top Action Buttons -->
+    <div class="flex flex-wrap items-center justify-between mb-6 gap-3">
+      <!-- Left side: Add User -->
+      <app-button
+        customColor="bg-blue-950 text-white hover:bg-gray-500 cursor-pointer"
+        size="md"
+        (buttonClick)="onAddUser()"
+      >
+        <i class="fas fa-user-plus mr-2"></i>
+        Add Course
+      </app-button>
+
+      <div class="flex gap-3">
+        <app-button
+          customColor="bg-blue-100 text-blue-950 hover:bg-gray-200 cursor-pointer"
+          size="sm"
+          (buttonClick)="onFilterByRole()"
+        >
+          <i class="fas fa-users mr-2"></i>
+          Filter by Category
+        </app-button>
+
+        <app-button
+          customColor="bg-blue-100 text-blue-950 hover:bg-gray-200 cursor-pointer"
+          size="sm"
+          (buttonClick)="onFilterByStatus()"
+        >
+          <i class="fas fa-toggle-on mr-2"></i>
+          Filter by Status
+        </app-button>
+      </div>
+    </div>
+
+    <app-data-table
+      title="Manage Courses"
+      [columns]="courseColumns"
+      [rows]="courses"
+      [showViewAll]="true"
+      [enableActions]="true"
+      [rowClickable]="true"
+      (edit)="onEditCourse($event)"
+      (delete)="onDeleteCourse($event)"
+    >
+    </app-data-table>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-2 mt-6">
+      <app-button variant="outline" size="sm" (buttonClick)="onPrevPage()">
+        Previous
+      </app-button>
+
+      <app-button
+        *ngFor="let page of [1, 2, 3]"
+        variant="light"
+        size="sm"
+        (buttonClick)="onPageSelect(page)"
+      >
+        {{ page }}
+      </app-button>
+
+      <app-button variant="outline" size="sm" (buttonClick)="onNextPage()">
+        Next
+      </app-button>
+    </div>
+  </main>
 </div>

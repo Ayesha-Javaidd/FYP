@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../button/button.component';
-
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 @Component({
   selector: 'app-teacher-table',
   standalone: true,
@@ -9,7 +8,6 @@ import { ButtonComponent } from '../button/button.component';
   templateUrl: './teacher-table.component.html',
   styleUrl: './teacher-table.component.css',
 })
-
 export class TeacherTableComponent {
   teachers: Teacher[] = [
     {

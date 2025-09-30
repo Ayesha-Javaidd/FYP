@@ -3,7 +3,7 @@ import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.
 import { CommonModule } from '@angular/common';
 import { StatCardComponent } from '../../../../shared/components/stat-card/stat-card.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
-import { TeacherTableComponent } from '../../../../shared/components/teacher-table/teacher-table.component';
+import { TeacherTableComponent } from '../../components/teacher-table/teacher-table.component';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
@@ -18,6 +18,14 @@ import { TeacherTableComponent } from '../../../../shared/components/teacher-tab
 })
 export class AdminDashboardComponent {
   isSidebarOpen = true;
+  columns = [
+    { key: 'avatar', label: 'Teacher' },
+    { key: 'courses', label: 'Courses' },
+    { key: 'students', label: 'Students' },
+    { key: 'role', label: 'Role' },
+    { key: 'status', label: 'Status' },
+  ];
+
   statsCards: StatCard[] = [
     {
       title: 'Total Users',
@@ -46,6 +54,36 @@ export class AdminDashboardComponent {
       icon: 'fas fa-chalkboard-teacher',
       iconBgClass: 'bg-orange-100',
       iconColorClass: 'text-orange-600',
+    },
+  ];
+
+  teachers = [
+    {
+      avatar: 'JD',
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      courses: 12,
+      students: 345,
+      role: 'Teacher',
+      status: 'Active',
+    },
+    {
+      avatar: 'JS',
+      name: 'Jane Smith',
+      email: 'jane.smith@example.com',
+      courses: 8,
+      students: 210,
+      role: 'Sub-Admin',
+      status: 'Active',
+    },
+    {
+      avatar: 'RB',
+      name: 'Robert Brown',
+      email: 'robert.brown@example.com',
+      courses: 15,
+      students: 450,
+      role: 'Teacher',
+      status: 'Inactive',
     },
   ];
 }
