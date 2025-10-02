@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { SystemSettingsComponent } from '../../components/system-settings/system-settings.component';
@@ -6,8 +7,10 @@ import { ProfileFormComponent } from '../../components/profile-form/profile-form
 import { ChangePasswordComponent } from "../../components/change-password/change-password.component";
 @Component({
   selector: 'app-settings',
-  imports: [HeaderComponent, SystemSettingsComponent, ProfileFormComponent, ChangePasswordComponent],
+  imports: [CommonModule,HeaderComponent, SystemSettingsComponent, ProfileFormComponent, ChangePasswordComponent],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css',
 })
-export class SettingsComponent {}
+export class SettingsComponent {
+  activeTab: 'profile' | 'system' = 'profile';
+}

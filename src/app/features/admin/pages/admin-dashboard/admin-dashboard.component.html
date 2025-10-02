@@ -15,5 +15,23 @@
     </div>
 
     <app-teacher-table></app-teacher-table>
+    <div class="flex justify-center items-center gap-2 mt-6">
+      <app-button variant="outline" size="sm" (buttonClick)="onPrevPage()">
+        Previous
+      </app-button>
+
+      <app-button
+        *ngFor="let page of [1, 2, 3]"
+        variant="light"
+        size="sm"
+        (buttonClick)="onPageSelect(page)"
+      >
+        {{ page }}
+      </app-button>
+
+      <app-button variant="outline" size="sm" (buttonClick)="onNextPage()">
+        Next
+      </app-button>
+    </div>
   </main>
 </div>

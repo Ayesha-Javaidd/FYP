@@ -15,10 +15,15 @@ export class CoursesComponent {
   onAddUser() {}
   onFilterByRole() {}
   onFilterByStatus() {}
-  onPageSelect(page: string) {}
-  onNextPage() {}
-  onPrevPage() {}
-
+  onPrevPage() {
+    throw new Error('Method not implemented.');
+  }
+  onPageSelect(page: number) {
+    throw new Error('Method not implemented.');
+  }
+  onNextPage() {
+    throw new Error('Method not implemented.');
+  }
   courseColumns: TableColumn[] = [
     { key: 'title', label: 'Course Title', type: 'text' },
     { key: 'code', label: 'Code', type: 'text' },

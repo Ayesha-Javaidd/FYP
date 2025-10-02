@@ -15,10 +15,15 @@ export class UsersComponent {
   onAddUser() {}
   onFilterByRole() {}
   onFilterByStatus() {}
-  onPageSelect(page: string) {}
-  onNextPage() {}
-  onPrevPage() {}
-
+  onPrevPage() {
+    throw new Error('Method not implemented.');
+  }
+  onPageSelect(page: number) {
+    throw new Error('Method not implemented.');
+  }
+  onNextPage() {
+    throw new Error('Method not implemented.');
+  }
   userColumns: TableColumn[] = [
     { key: 'avatar', label: 'User', type: 'avatar' },
     { key: 'role', label: 'Role', type: 'text' },

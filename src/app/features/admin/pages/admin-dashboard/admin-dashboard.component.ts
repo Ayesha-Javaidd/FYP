@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { StatCardComponent } from '../../../../shared/components/stat-card/stat-card.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { TeacherTableComponent } from '../../components/teacher-table/teacher-table.component';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
@@ -12,11 +13,21 @@ import { TeacherTableComponent } from '../../components/teacher-table/teacher-ta
     HeaderComponent,
     StatCardComponent,
     TeacherTableComponent,
+    ButtonComponent,
   ],
   templateUrl: './admin-dashboard.component.html',
   styleUrl: './admin-dashboard.component.css',
 })
 export class AdminDashboardComponent {
+  onPrevPage() {
+    throw new Error('Method not implemented.');
+  }
+  onPageSelect(page: number) {
+    throw new Error('Method not implemented.');
+  }
+  onNextPage() {
+    throw new Error('Method not implemented.');
+  }
   isSidebarOpen = true;
   columns = [
     { key: 'avatar', label: 'Teacher' },
