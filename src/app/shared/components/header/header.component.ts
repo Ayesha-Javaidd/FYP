@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   @Input() pageTitle: string = 'Admin Dashboard';
   @Input() notificationCount: number = 0;
-  @Input() adminProfile: AdminProfile = {
+  @Input() profile: Profile = {
     name: 'Admin Profile',
     initials: 'AP',
   };
@@ -32,7 +32,7 @@ export class HeaderComponent {
   }
 }
 
-interface AdminProfile {
+interface Profile {
   name: string;
   initials: string;
   avatar?: string;

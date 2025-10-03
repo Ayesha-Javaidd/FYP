@@ -1,5 +1,4 @@
 <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-  <!-- Header -->
   <div class="flex items-center justify-between p-6 border-b border-gray-200">
     <h3 class="text-lg font-semibold text-gray-900">
       {{ title }}
@@ -20,13 +19,13 @@
         <tr>
           <th
             *ngFor="let col of columns"
-            class="px-6 py-3 text-left text-xs font-medium text-blue-950 tracking-wider"
+            class="px-6 py-3 text-left text-sm font-medium text-blue-950 tracking-wider"
           >
             {{ col.label }}
           </th>
           <th
             *ngIf="enableActions"
-            class="px-6 py-3 text-left text-xs font-medium text-blue-950 tracking-wider"
+            class="px-6 py-3 text-left text-sm font-medium text-blue-950 tracking-wider"
           >
             Actions
           </th>
@@ -83,14 +82,14 @@
             <div class="flex space-x-2">
               <app-button
                 size="sm"
-                customColor="bg-yellow-100 hover:bg-gray-100 text-orange-500"
+                customColor="bg-lime-100 hover:bg-blue-100 text-green-950"
                 (buttonClick)="onEdit(row)"
               >
                 Edit
               </app-button>
               <app-button
                 size="sm"
-                customColor="bg-red-100 hover:bg-gray-100 text-red-800"
+                customColor="bg-red-100 hover:bg-gray-200 text-red-800"
                 (buttonClick)="onDelete(row)"
               >
                 Delete

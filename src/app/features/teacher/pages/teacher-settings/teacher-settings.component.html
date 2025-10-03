@@ -1,5 +1,8 @@
 <div class="transition-all min-h-screen bg-gray-50">
-  <app-header pageTitle="Settings"></app-header>
+  <app-header
+    [profile]="{ name: 'Teacher Profile', initials: 'TP' }"
+    pageTitle="Settings"
+  ></app-header>
 
   <main class="p-6">
     <div class="max-w-6xl mx-auto bg-white rounded-lg shadow p-6">

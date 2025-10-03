@@ -10,6 +10,14 @@ import { NotFoundComponent } from './features/not-found/not-found/not-found.comp
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TeacherLayoutComponent } from './layouts/teacher-layout/teacher-layout.component';
+import { TeacherDashboardComponent } from './features/teacher/pages/teacher-dashboard/teacher-dashboard.component';
+import { TeacherCoursesComponent } from './features/teacher/pages/teacher-courses/teacher-courses.component';
+import { TeacherSettingsComponent } from './features/teacher/pages/teacher-settings/teacher-settings.component';
+import { TrackStudentComponent } from './features/teacher/pages/track-student/track-student.component';
+import { GenerateAssignmentsComponent } from './features/teacher/pages/generate-assignments/generate-assignments.component';
+import { GenerateQuizComponent } from './features/teacher/pages/generate-quiz/generate-quiz.component';
 // export const routes: Routes = [
 //   { path: '', component: LoginComponent },
 //   { path: 'dashboard', component: AdminDashboardComponent },
@@ -25,20 +33,36 @@ export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   {
     path: '',
-    component: MainLayoutComponent,
+    component: AuthLayoutComponent,
     children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'studentsignup', component: StudentSignupComponent },
+    ],
+  },
+
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'users', component: UsersComponent },
       { path: 'settings', component: SettingsComponent },
     ],
   },
+
   {
-    path: '',
-    component: AuthLayoutComponent,
+    path: 'teacher',
+    component: TeacherLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'studentsignup', component: StudentSignupComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: TeacherDashboardComponent },
+      { path: 'courses', component: TeacherCoursesComponent },
+      { path: 'quizzes', component: GenerateQuizComponent },
+      { path: 'assignments', component: GenerateAssignmentsComponent },
+      { path: 'trackstudent', component: TrackStudentComponent },
+      { path: 'settings', component: TeacherSettingsComponent },
     ],
   },
 

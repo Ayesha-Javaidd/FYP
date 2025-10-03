@@ -29,7 +29,7 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       console.log('Login attempt:', { email, password });
 
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/admin/dashboard']);
     } else {
       console.log('Form is invalid');
       this.markFormGroupTouched();

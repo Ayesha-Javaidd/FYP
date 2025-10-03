@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../../../../shared/components/header/header.component';
+import { SettingsComponent } from '../../../admin/pages/settings/settings.component';
+import { CommonModule } from '@angular/common';
+import { ChangePasswordComponent } from '../../../admin/components/change-password/change-password.component';
+import { ProfileFormComponent } from '../../../admin/components/profile-form/profile-form.component';
+import { SystemSettingsComponent } from '../../../admin/components/system-settings/system-settings.component';
+@Component({
+  selector: 'app-teacher-settings',
+  imports: [
+    HeaderComponent,
+
+    CommonModule,
+    ChangePasswordComponent,
+    ProfileFormComponent,
+    SystemSettingsComponent,
+  ],
+  templateUrl: './teacher-settings.component.html',
+  styleUrl: './teacher-settings.component.css',
+})
+export class TeacherSettingsComponent {
+  activeTab: 'profile' | 'system' = 'profile';
+}
